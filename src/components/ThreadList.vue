@@ -32,16 +32,12 @@
 
 <script>
 import sourceData from '@/data.json'
-import AppDate from '@/components/AppDate'
 export default {
   props: {
     threads: {
       type: Array,
       required: true
     }
-  },
-  components: {
-    AppDate
   },
   data () {
     return {
