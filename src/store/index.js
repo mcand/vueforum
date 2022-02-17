@@ -16,7 +16,7 @@ export default createStore({
     },
     appendPostToThread (state, { postId, threadId }) {
       const thread = state.threads.find(thread => thread.id === threadId)
-      therad.posts.push(postId)
+      thread.posts.push(postId)
     }
   }
 })
