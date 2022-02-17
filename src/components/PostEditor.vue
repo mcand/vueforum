@@ -20,7 +20,6 @@ export default {
   },
   methods: {
     save () {
-      const postId = 'qqqq' + Math.random()
       const post = {
         id: postId,
         text: this.text,

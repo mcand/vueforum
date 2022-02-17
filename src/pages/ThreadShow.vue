@@ -44,10 +44,7 @@ export default {
         ...eventData.post,
         threadId: this.id
       }
-      this.posts.push(post)
-      this.thread.posts.push(post.id)
-
-      this.newPostText = ''
+      this.$store.dispatch('createPost', post)
     }
   }
 }

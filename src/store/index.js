@@ -2,5 +2,21 @@ import { createStore } from 'vuex'
 import sourceDate from '@/data'
 
 export default createStore({
-  state: sourceDate
+  state: sourceDate,
+  actions: {
+    createPost (context, post) {
+      post.id = 'qqqq' + Math.random()
+      context.commit('setPost', { post }) // set the post
+      context.commit('appendPostToThread', { postId: post.id, threadId: post.threadId }) // append post to thread
+    }
+  },
+  mutations: {
+    setPost (state, { post }) {
+      state.posts.push(post)
+    },
+    appendPostToThread (state, { postId, threadId }) {
+      const thread = state.threads.find(thread => thread.id === threadId)
+      therad.posts.push(postId)
+    }
+  }
 })
