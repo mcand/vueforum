@@ -1,5 +1,6 @@
 import Home from '@/pages/Home'
 import ThreadShow from '@/pages/ThreadShow'
+import ThreadCreate from '@/pages/ThreadCreate'
 import NotFound from '@/pages/NotFound'
 import Forum from '@/pages/Forum'
 import Category from '@/pages/Category'
@@ -39,7 +40,7 @@ const routes = [
   },
   {
     path: '/thread/:id',
-    name: 'Thread',
+    name: 'ThreadShow',
     component: ThreadShow,
     props: true,
     beforeEnter (to, from, next) {
@@ -59,6 +60,12 @@ const routes = [
       }
       // if does not exist redirect to not found
     }
+  },
+  {
+    path: '/form/:forumId/thread/create',
+    name: 'ThreadCreate',
+    component: ThreadCreate,
+    props: true
   },
   {
     path: '/:pathMatch(.*)*',
